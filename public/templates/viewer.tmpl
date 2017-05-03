@@ -7,7 +7,9 @@
   <link rel="stylesheet" type="text/css" href="/mapbox-gl.css{{&key_query}}" />
   <script src="/mapbox-gl.js{{&key_query}}"></script>
   <link rel="stylesheet" type="text/css" href="/mapbox.css{{&key_query}}" />
-  <script src="/mapbox.js{{&key_query}}"></script>
+  <link rel="stylesheet" type="text/css" href="/mapbox-gl-inspect.css{{&key_query}}" />
+  <script src="/mapbox-gl.js{{&key_query}}"></script>
+  <script src="/mapbox-gl-inspect.min.js{{&key_query}}"></script>
   <script src="/leaflet-hash.js{{&key_query}}"></script>
   <style>
     body { margin:0; padding:0; }
@@ -31,6 +33,11 @@
         hash: true
       });
       map.addControl(new mapboxgl.NavigationControl());
+      var inspect = new MapboxInspect({
+        showInspectMap: false,
+        showInspectButton: true
+      });
+      map.addControl(inspect);
     } else {
       var map = L.mapbox.map('map', '/styles/{{id}}/rendered.json{{&key_query}}', { zoomControl: false });
       new L.Control.Zoom({ position: 'topright' }).addTo(map);

@@ -35,7 +35,7 @@ a:hover{
   font-weight: bold;
   font-size: 32px;
   text-align:center;
-  margin:90px 0 0 0;
+  margin: 0 0 0 0;
   position:relative;
 }
 .title.light:after {
@@ -59,7 +59,7 @@ section{
   font-size: 26px;
   font-weight:normal;
   text-align:center;
-  margin:10px 0 95px 0;
+  margin:10px 0 20px 0;
 }
 .box-header {
   text-align:left;
@@ -72,9 +72,11 @@ section{
 }
 .item{
   background:#fff;
-  height: 191px;
+  min-height: 191px;
+  width: 100%;
   border: 1px solid #ededed;
   border-top:none;
+  display: inline-block;
 }
 .item:nth-child(odd) {
   background-color:#fbfbfb;
@@ -88,7 +90,8 @@ section{
 }
 .details {
   float:left;
-  height: 128px;
+  width: 60%;
+  /* height: 128px; */
   padding: 20px 30px 20px 188px;
 }
 .details h3 {

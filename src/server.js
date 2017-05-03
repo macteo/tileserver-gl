@@ -15,6 +15,9 @@ var base64url = require('base64url'),
     mercator = new (require('@mapbox/sphericalmercator'))(),
     morgan = require('morgan');
 
+var showdown  = require('showdown'),
+    converter = new showdown.Converter();
+
 var packageJson = require('../package'),
     serve_font = require('./serve_font'),
     serve_rendered = null,
@@ -249,6 +252,7 @@ module.exports = function(opts) {
     Object.keys(styles).forEach(function(id) {
       var style = styles[id];
       style.name = (serving.styles[id] || serving.rendered[id] || {}).name;
+      style.changelog = converter.makeHtml((serving.styles[id] || serving.rendered[id] || {}).metadata['tralio:changelog']);
       style.serving_data = serving.styles[id];
       style.serving_rendered = serving.rendered[id];
       if (style.serving_rendered) {
