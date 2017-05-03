@@ -20,19 +20,17 @@
     <h1 class="title {{#if is_light}}light{{/if}}"><img src="/images/tralio.png" alt="TileServer GL" /></h1>
     <h2 class="subtitle">Outdoor Maps</h2>
     {{#if styles}}
-      <h2 class="box-header">Styles</h2>
+      
       <div class="box">
+        <div class="item">
+          <h2 class="box-header">Styles</h2>
+        </div>
       {{#each styles}}
         <div class="item">
-          {{#if thumbnail}}
-            <img src="/styles/{{@key}}/rendered/{{thumbnail}}{{&../key_query}}" alt="{{name}} preview" />
-          {{else}}
-            <img src="/images/placeholder.png" alt="{{name}} preview" />
-          {{/if}}
           <div class="details">
             <h3>{{name}}</h3>
             {{#if changelog}}
-            <p class="description">{{{changelog}}}</p>
+              <div class="changelog">{{{changelog}}}</div>
             {{/if}}
             <p class="services">
               services:
@@ -51,6 +49,11 @@
               {{/if}}
             </p>
           </div>
+          {{#if thumbnail}}
+            <div class="thumbnail">
+              <img src="/styles/{{@key}}/rendered/{{thumbnail}}{{&../key_query}}" alt="{{name}} preview" />
+            </div>
+          {{/if}}
           <div class="viewers">
             {{#if serving_data}}
               {{#if serving_rendered}}
@@ -70,9 +73,9 @@
     {{/if}}
   </section>
   <footer>
-    <a href="https://www.klokantech.com/" target="_blank"><img src="/images/klokantech.png" /></a>
+    Developed by <a href="https://macteo.it/" target="_blank">Dolomate</a>, based on work from many contributors.
     <p>
-      <a href="https://github.com/klokantech/tileserver-gl" target="_blank">Powered by a slightly modified TileServer GL ({{server_version}})</a> – <a href="https://www.klokantech.com/" target="_blank">an open-source project from Klokan Technologies GmbH.</a> <img src="https://t.klokantech.com/8073932/19" class="t" />
+      <a href="https://github.com/klokantech/tileserver-gl" target="_blank">Powered by TileServer GL ({{server_version}})</a> – <a href="https://www.klokantech.com/" target="_blank">an open-source project from Klokan Technologies GmbH.</a>
     </p>
   </footer>
 </body>

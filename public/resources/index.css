@@ -64,18 +64,17 @@ section{
 .box-header {
   text-align:left;
   text-transform:uppercase;
-  border:1px solid #ededed;
-  margin:25px 0 0 0;
-  padding:12px 30px;
+  padding: 0px 30px;
   font-size:20px;
-  background:#fff;
+}
+.box {
+  margin-top:4px;
 }
 .item{
   background:#fff;
-  min-height: 191px;
-  width: 100%;
   border: 1px solid #ededed;
-  border-top:none;
+  width: 100%;
+  margin-top:-6px;
   display: inline-block;
 }
 .item:nth-child(odd) {
@@ -90,17 +89,21 @@ section{
 }
 .details {
   float:left;
-  width: 60%;
+  width: 70%;
   /* height: 128px; */
-  padding: 20px 30px 20px 188px;
+  padding: 0px 30px 20px 30px;
 }
 .details h3 {
   font-size:18px;
-  margin-top: 25px;
 }
 .details p {
   padding:0;
   margin:18px 0;
+}
+div.thumbnail {
+  width: 188px;
+  height: 153px;
+  float: right;
 }
 .viewers {
   float:right;
@@ -108,6 +111,7 @@ section{
   width: 120px;
   margin-top: 25px;
   padding-right: 30px;
+  margin-bottom: 30px;
 }
 .btn {
   display:block;
@@ -177,8 +181,24 @@ body {
 @media (max-width: 950px) {
   section{
     margin: 0;
-    width: 96%;
+    width: 94%;
     padding: 2%;
+  }
+  .details {
+    width: 90%;
+  }
+  div.thumbnail {
+    float: left;
+    height: 158px;
+  }
+  .item img {
+    margin: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .viewers {
+    float: right;
+    margin-top: 15px;
   }
 }
 @media (max-width: 600px) {
@@ -196,14 +216,28 @@ body {
     margin: 0 0 35px 0;
   }
   .item{
-    height: 245px;
+    /* height: 245px;*/
+  }
+  div.thumbnail {
+    float: left;
+    height: 158px;
+  }
+  .item img{
+    margin: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .details {
+    width: 90%;
   }
   .viewers{
-    float: left;
-    text-align: left;
-    width: 100%;
+    float: right;
+    width: 120px;
+    text-align: center;
+    /*width: 100%;*/
     margin-left: 30px;
     margin-top: 15px;
+    margin-bottom: 30px;
   }
   .viewers a{
     display: inline-block;
